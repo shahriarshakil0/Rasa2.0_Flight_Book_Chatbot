@@ -25,7 +25,7 @@ rasa train
 ```
 rasa run actions
 ```
-##open another tab
+##open another terminal tab
 ```
 rasa shell
 ```
