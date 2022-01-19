@@ -1,0 +1,75 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - search_flight
+
+
+slots:
+  dep_city:
+    type: text
+  arr_city:
+    type: text
+  dep_date:
+    type: text
+ 
+
+
+responses:
+    
+  utter_greet:
+  - text: "Hi there! How can I help you?"
+
+
+  utter_ask_dep_city:
+  - text: "From which city do you want to go?"
+
+  utter_ask_arr_city:
+  - text: "Which is your destination city?"
+
+  utter_ask_dep_date:
+  - text: "Which day do you want to go?(Ex:2022-05-15)"
+
+
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "See you later. Thanks for visiting."
+
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Shakil."
+
+  utter_out_of_scope:
+  - text: "Sorry, I can't handle that request."
+
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+actions:
+- action_flight
+- action_clear
+
+forms:
+  flight_form:
+    dep_city:
+    - type: from_text
+    arr_city:
+    - type: from_text
+    dep_date:
+    - type: from_text
+    
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
